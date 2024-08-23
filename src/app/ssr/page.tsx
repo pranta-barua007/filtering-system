@@ -7,6 +7,7 @@ import { ProductState } from "@/lib/validators/product-validator";
 import { Filter } from "lucide-react";
 import { QueryResult } from "@upstash/vector";
 import AllSort from "./components/AllSort";
+import { siteUrl } from "@/lib/siteUrl";
 
 const DEFAULT_CUSTOM_PRICE = [0, 100] as [number, number];
 
@@ -32,7 +33,7 @@ export default async function Home({
       ? [Number(priceParamValues[0]), Number(priceParamValues[1])]
       : DEFAULT_FILTER_OPTIONS.price.range;
 
-  const request = await fetch("http://localhost:3000/api/products", {
+  const request = await fetch(`${siteUrl}/api/products`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

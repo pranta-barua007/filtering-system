@@ -4,6 +4,7 @@ import type { Product as TProduct } from "@/db";
 import React, { Fragment } from "react";
 import EmptyState from "@/components/Products/EmptyState";
 import Product from "@/components/Products/Product";
+import { siteUrl } from "@/lib/siteUrl";
 
 type ProductListProps = {
   DEFAULT_FILTER_OPTIONS: ProductState;
@@ -25,7 +26,7 @@ const ProductsList = async ({
       ? [Number(priceParamValues[0]), Number(priceParamValues[1])]
       : DEFAULT_FILTER_OPTIONS.price.range;
 
-  const request = await fetch("http://localhost:3000/api/products", {
+  const request = await fetch(`${siteUrl}/api/products`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
