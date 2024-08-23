@@ -18,10 +18,8 @@ const DEFAULT_FILTER_OPTIONS: ProductState = {
 };
 
 export default async function Home({
-  _params,
   searchParams,
 }: {
-  _params: { slug: string };
   searchParams: { [key: string]: string };
 }) {
   const colorParamValues = searchParams?.color?.split(",");
