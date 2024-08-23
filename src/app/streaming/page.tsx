@@ -8,7 +8,7 @@ import ProductListSkeleton from "./components/ProductListSkeleton";
 
 const DEFAULT_CUSTOM_PRICE = [0, 100] as [number, number];
 
-export const DEFAULT_FILTER_OPTIONS: ProductState = {
+const DEFAULT_FILTER_OPTIONS: ProductState = {
   color: ["beige", "blue", "green", "purple", "white"],
   price: { isCustom: false, range: DEFAULT_CUSTOM_PRICE },
   size: ["L", "M", "S"],
