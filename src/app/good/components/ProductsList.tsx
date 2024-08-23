@@ -36,7 +36,7 @@ function ProductsList() {
     queryKey: ["products"],
     queryFn: async () => {
       const { data } = await axios.post<QueryResult<TProduct>[]>(
-        "http://localhost:3000/api/products",
+        "/api/products",
         {
           filter: {
             sort: sortParamValue ? sortParamValue : DEFAULT_FILTER_OPTIONS.sort,
